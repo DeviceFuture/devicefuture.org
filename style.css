@@ -1,0 +1,145 @@
+:root {
+    --background: white;
+    --foreground: black;
+    --translucentBackground: rgba(255, 255, 255, 0.5);
+    --darkerBackground: rgb(238, 238, 238);
+    --primary: rgb(28, 90, 189);
+    --primaryText: white;
+    --secondary: rgb(219, 29, 118);
+    --secondaryText: white;
+    --sidePadding: 10vw;
+}
+
+*:not(:is(h1, h2, h3, h4, h5, h6) *) {
+    font-family: "Lexend Deca", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    height: 4rem;
+    padding-left: var(--sidePadding);
+    padding-right: var(--sidePadding);
+    background-color: var(--translucentBackground);
+    transition: 1s background-color;
+}
+
+nav.stuck {
+    background-color: var(--darkerBackground);
+}
+
+nav img {
+    height: 100%;
+}
+
+main {
+    min-height: calc(100vh - 4rem);
+    padding-left: var(--sidePadding);
+    padding-right: var(--sidePadding);
+}
+
+footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: var(--sidePadding);
+    padding-right: var(--sidePadding);
+    background-color: var(--darkerBackground);
+}
+
+section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+section h1 {
+    font-size: 2.4rem;
+}
+
+section h2 {
+    font-size: 2rem;
+}
+
+section.cover {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+}
+
+section.cover h1 {
+    font-size: 3rem;
+    text-transform: lowercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Brass Mono", sans-serif;
+    font-weight: normal;
+    color: var(--primary);
+}
+
+span.primary {
+    color: var(--primary);
+}
+
+span.secondary {
+    color: var(--secondary);
+}
+
+button {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--primary);
+    color: var(--primaryText);
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+}
+
+iframe.attoDemo {
+    height: 30vw;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.split > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+@media (min-width: 801px) {
+    section.cover {
+        padding-inline-end: 20%;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --sidePadding: 5vw;
+    }
+
+    .split {
+        display: block;
+    }
+
+    iframe.attoDemo {
+        height: 70vw;
+    }
+}
